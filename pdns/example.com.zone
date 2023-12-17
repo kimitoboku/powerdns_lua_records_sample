@@ -1,0 +1,11 @@
+$TTL 86400
+@            IN      SOA dns.example.com. root.example.com. (
+                     2023122101 ; serial
+                     3600       ; refresh 1hr
+                     900        ; retry 15min
+                     604800     ; expire 1w
+                     86400      ; min 24hr
+)
+             IN      NS     ns.example.jp.
+ns           IN      A      192.168.56.1
+random	     IN      LUA    A "pickwrandom({ {1, '1.2.3.4'}, {2, '4.3.2.1'} })"
